@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import Layout from '../components/Layout'
 
 import {
   useStoryblokState,
@@ -20,8 +21,9 @@ export default function Page({ story }) {
       <header>
         <h1>{story ? story.name : "My Site"}</h1>
       </header>
-
-      <StoryblokComponent blok={story.content} />
+      <Layout>
+        <StoryblokComponent blok={story.content} />
+       </Layout>
     </div>
   );
 }

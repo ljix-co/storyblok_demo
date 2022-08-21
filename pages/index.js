@@ -1,11 +1,10 @@
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
-
 import {useStoryblokState, getStoryblokApi, StoryblokComponent } from "@storyblok/react"
+import Layout from '../components/Layout'
 
 export default function Home(props) {
   const story = useStoryblokState(props.story, {}, props.preview);
-  console.log(props.preview);
 
   return (
     <div className={styles.container}>
@@ -19,8 +18,9 @@ export default function Home(props) {
           { props.story ? props.story.name : 'My Site' }
         </h1>
       </header>
-
-       <StoryblokComponent blok={story.content} />
+      <Layout>
+        <StoryblokComponent blok={story.content} />
+       </Layout>
     </div>
   )
 }
@@ -47,6 +47,6 @@ export async function getStaticProps(context) {
       key: data ? data.story.id : false,
       preview: context.preview || false,
     },
-    revalidate: 3600, // revalidate every hour
+    revalidate: 300, // revalidate every hour
   };
 }
