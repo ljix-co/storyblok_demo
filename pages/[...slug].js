@@ -28,10 +28,10 @@ export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
-    version: "published", 
+    version: "published",
   };
 
-  if (context.preview) {
+  if (params.preview) {
     sbParams.version = "draft";
   }
 
