@@ -5,19 +5,12 @@ import Layout from '../components/Layout'
 
 export default function Home(props) {
   const story = useStoryblokState(props.story, {}, props.preview);
-
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Headless CMS presentation</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header>
-        <h1>
-          { props.story ? props.story.name : 'My Site' }
-        </h1>
-      </header>
       <Layout>
         <StoryblokComponent blok={story.content} />
        </Layout>

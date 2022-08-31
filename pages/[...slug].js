@@ -14,13 +14,9 @@ export default function Page({ story }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{story ? story.name : "My Site"}</title>
+        <title>{story ? story.name : "Headless CMS presentation"}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <header>
-        <h1>{story ? story.name : "My Site"}</h1>
-      </header>
       <Layout>
         <StoryblokComponent blok={story.content} />
        </Layout>

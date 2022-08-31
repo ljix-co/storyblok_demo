@@ -5,13 +5,19 @@ import Grid from "../components/Grid";
 import Page from "../components/Page";
 import Teaser from "../components/Teaser";
 import HeroSection from "../components/HeroSection";
+import LinkComponent from "../components/LinkComponent";
+import List from "../components/List";
+import PresentationSection from "../components/PresentationSection";
 
 const components = {
   feature: Feature,
   grid: Grid,
   teaser: Teaser,
   page: Page,
-  'hero-section': HeroSection
+  'hero-section': HeroSection,
+  link: LinkComponent,
+  list: List,
+  'presentation-section': PresentationSection
 };
 
 storyblokInit({
