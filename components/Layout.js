@@ -1,9 +1,8 @@
 import Navigation from "./Navigation";
-import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <div className="font-sans">
+    <div className="font-sans bg-slate-700">
       <Navigation/>
         <div
         className={children.props.blok.body?.find(element => element.component === 'hero-section' && element.layout === 'layout_one')
