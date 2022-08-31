@@ -27,9 +27,9 @@ export async function getStaticProps(context) {
     version: "published",
   };
 
-  // if (context.preview) {
-  //   sbParams.version = "draft";
-  // }
+  if (context.preview) {
+    sbParams.version = "draft";
+  }
 
   const storyblokApi = getStoryblokApi();
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
