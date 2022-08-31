@@ -1,15 +1,22 @@
 import { storyblokEditable } from "@storyblok/react";
+import { useEffect, useState } from 'react';
 
 const HeroSection = ({blok}) => {
+  const [width, setWidth] = useState(0)
+
+    useEffect(() => {
+        setWidth(window.innerWidth)
+    }, [])
+
     return (
         <div {...storyblokEditable(blok)}>
             {blok.layout == 'layout_one' && (
                 <section className="text-gray-600 body-font w-full h-[70vh]" style={{
                   backgroundImage: `url('${blok.image}')`,
                   backgroundRepeat: 'no-repeat',
-                  backgroundPosition: 'left'
+                  backgroundPosition: `${width > 1920 ? 'center': 'left'}`
                 }}>
-                <div className="container mx-auto w-5/6 flex px-5 py-24 md:flex-row flex-col items-center">
+                <div className="container mx-auto w-5/6 flex px-5 py-24 md:flex-row flex-col items-center 2xl:ml-64">
                   <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
                     <h1 className="title-font sm:text-8xl text-5xl mt-24 mb-4 font-medium text-gray-800">
                     {blok.title}
